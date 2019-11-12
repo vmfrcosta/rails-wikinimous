@@ -1,0 +1,20 @@
+<div class="navbar d-flex align-items-center justify-content-between">
+	<div class="wikinimous m-2">Wikinimous</div>
+	<%= link_to new_article_path do %>
+		<div class="new m-2">
+			New Article
+		</div>
+	<% end %>
+</div>
+<div class="container">
+	<div class="articles">
+		<% @articles.each do |article| %>
+			<div class="article">
+				<%= link_to article_path(article) do%>
+					<h2><%= article.title %></h2>
+				<% end %>
+					<p><%= article.content %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
